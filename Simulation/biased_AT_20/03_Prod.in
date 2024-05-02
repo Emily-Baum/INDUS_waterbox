@@ -1,0 +1,23 @@
+Production
+ &cntrl
+  iwrap=1, # wrap periodic coords
+  imin=0, # not a minimization
+  ntx=5, # read coords and velocities
+  irest=1, # continue simulation (from heating)
+  nstlim=5000000, # timesteps
+  dt=0.002, # timestep length
+  ntf=2, # ignore H atom bond interactions
+  ntc=2, # constrain H bonds
+  temp0=300.0, # temperature
+  ntpr=500, # print md info freq
+  ntwx=500, # print coords freq
+  cut=8.0, # nonbonded cutoff radius 
+  ntb=2, # constant pressure 
+  ntp=1, # isotropic position scaling
+  ntt=3, # langevin thermostat
+  barostat=1, # berendson barostat
+  gamma_ln=2.0, # langevin collision frequency
+  ig=-1, # random seed
+  plumed=1, # use plumed inputs (we do this for INDUS)
+  plumedfile='plumed.dat', # plumed file name
+ /

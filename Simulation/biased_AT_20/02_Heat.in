@@ -1,0 +1,25 @@
+Heat
+ &cntrl
+  iwrap=1, # wrap periodic coords
+  imin=0, # not a minimization
+  ntx=1, # read coords from minimizaiton
+  irest=0, # start as a new simulation
+  nstlim=10000, # number of timesteps
+  dt=0.002, # timestep length
+  ntf=2, # ignore H atom bond interactions
+  ntc=2, # constrain H bonds
+  tempi=0.0, # initial temp for heat
+  temp0=300.0, # final temp for heat
+  ntpr=100, # print md info frequency
+  ntwx=100, # write md coords freq
+  cut=8.0, # nonbonded cutoff radius 
+  ntb=1, # constant volume
+  ntp=0, # no pressure scaling
+  ntt=3, # constant T (langevin)
+  gamma_ln=2.0, # langevin collision frequency
+  nmropt=1, # read nmr restraints and weight changes
+  ig=-1, # use random seed
+ /
+&wt type='TEMP0', istep1=0, istep2=9000, value1=0.0, value2=300.0 / # temperature ramp from 0 to 300
+&wt type='TEMP0', istep1=9001, istep2=10000, value1=300.0, value2=300.0 / # short equilibration at 300
+&wt type='END' /

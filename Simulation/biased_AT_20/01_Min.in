@@ -1,0 +1,12 @@
+Minimize
+ &cntrl
+  imin=1, # minimization
+  ntx=1, # read only initial coordinates
+  irest=0, # start a new simulation 
+  maxcyc=2000, # maximum minimization cycles
+  ncyc=1000, # minimization method changepoint (steepest descent to conjugate gradient)
+  ntpr=100, # energy minimization print steps
+  ntwx=0, # only write final minimization coords
+  cut=8.0, # non-bonded cutoff radius
+  iwrap=1, # wrap periodic coords
+ /
