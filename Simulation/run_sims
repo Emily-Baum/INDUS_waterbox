@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# loop through parameters in input file
+while read -r line
+do
+	# copy folder for new simulation
+	cp -r copy_sim "biased_AT_$line"
+        cd "biased_AT_$line"
+        
+	# edit plumed file with INDUS parameters
+	# unexpectedly the sign must flipped to produce any result so I make AT negative
+	sed -i plumed.dat -e "s/AT.*/AT=-$line KAPPA=0.98/"
+        
+	# run the simulation
+	./shell.sh
+        cd ..
+
+done < "$1"
+~              
