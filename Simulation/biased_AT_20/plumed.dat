@@ -1,0 +1,19 @@
+indus: INDUS INPUTFILE=indus.input # import INDUS
+
+# use harmonic bias on INDUS coarse grained water
+# parameter values will be filled in by shell script
+restraint: RESTRAINT ARG=indus.ntilde AT=-20 KAPPA=0.98
+
+# print number of waters in volume, coarse grained water, and bias info to plumed.out
+PRINT ...
+	LABEL=print
+	ARG=indus.n,indus.ntilde,restraint.bias
+	STRIDE=500
+	FILE=plumed.out
+... PRINT
+
+
+
+
+
+
