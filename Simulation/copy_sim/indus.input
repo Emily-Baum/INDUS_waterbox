@@ -1,0 +1,14 @@
+Target = [ atom_index 1-11571:3 ] # select molecules to bias with INDUS
+
+# define volume to bias molecules to/away from
+# units are in nm
+ProbeVolume = {
+
+	type = sphere
+	center = [ 2 2 2 ]
+	r_max = 0.6
+
+	sigma = 0.01 # these are recommended parameters from INDUS manual
+	alpha_c = 0.02
+}
+
